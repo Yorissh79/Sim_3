@@ -5,27 +5,27 @@ import Admin from "../pages/admin/Admin.jsx";
 import Basket from "../pages/basket/Basket.jsx";
 import Notfound from "../pages/notfoud/Notfound.jsx";
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
     {
         path: "/",
-        component: Layout,
+        Component: Layout,
         children: [
             {
                 path: "/",
-                component: Home,
+                Component: Home
             }
         ]
     },
     {
         path: "/admin",
-        component: Admin,
+        Component: Admin,
     },
     {
         path: "/basket",
-        component: Basket,
+        Component: Basket,
     },
     {
         path: "*",
-        component: Notfound,
+        Component: Notfound,
     }
 ])

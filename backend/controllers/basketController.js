@@ -6,8 +6,8 @@ const getBasket = async (req, res) => {
 }
 
 const postBasket = async (req, res) => {
-    const { name, description, price, image } = req.body
-    const product = {name, description, price, image}
+    const { name, description, price, image, count } = req.body
+    const product = {name, description, price, image, count}
     await basketModel.create(product)
     res.json(product)
 }

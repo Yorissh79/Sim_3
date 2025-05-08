@@ -1,0 +1,37 @@
+.main {
+
+    margin-top: 60px;
+
+    .text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .f {
+            padding-bottom: 15px;
+            font-style: italic;
+            color: #1b745e;
+            font-size: 1.025rem;
+            line-height: 1.5;
+        }
+
+        .s {
+            color: #1b745e;
+            padding-bottom: 30px;
+            font-size: 2.875rem;
+        }
+    }
+
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 30px;
+
+    }
+
+
+}

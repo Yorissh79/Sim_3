@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import style from './Admin.module.scss'
 import { useFormik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,12 +8,21 @@ import Backcard from '../../components/Backcard/Backcard';
 
 const Admin = () => {
 
+    const [filter, setFilter] = useState()
+    const [filteredData, setFilteredData] = useState()
+
     const valSchema = Yup.object({
         name: Yup.string().required("Name").min(2, "qisa"),
         des: Yup.string().required("Title").min(2, "qisa"),
         price: Yup.string().required("Price").min(1, "qisa"),
         image: Yup.string().required("Image").min(1, "qisa"),
     })
+
+    if (filter == "dec") {
+        setFilteredData(data.sort((a, b) => a - b))
+    } else {
+        setFilteredData(data.sort((a, b) => b - a))
+    }
 
     const dispatch = useDispatch()
     const data = useSelector(state => state.card.data)
@@ -76,6 +85,11 @@ const Admin = () => {
 
                 <button type="submit">Submit</button>
             </form>
+
+            <div className={style.filter}>
+                <button onClick={setFilter("dec")}>Dec</button>
+                <button onClick={setFilter("inc")}>Inc</button>
+            </div>
 
             <Backcard who={"admin"} data={data}/>
 

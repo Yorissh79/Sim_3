@@ -7,7 +7,7 @@ import { getCardThunk } from '../../../../redux/reducers/cardSlice'
 const Tsection = () => {
 
     const dispatch = useDispatch()
-    const data = useSelector(state => state.card.card)
+    const dat = useSelector(state => state.card.card)
 
     useEffect(() => {
         dispatch(getCardThunk())
@@ -19,7 +19,7 @@ const Tsection = () => {
                 <p className={style.f}> Devoted to wonderful beauty</p>
                 <p className={style.s}> Flowers Pricing</p>
             </div>
-            <Backcard data={data} who={"home"}/>
+            <Backcard data={dat} who={"home"}/>
         </div>
     )
 }
